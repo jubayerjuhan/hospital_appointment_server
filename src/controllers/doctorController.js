@@ -73,3 +73,16 @@ export const deleteDoctor = async (req, res, next) => {
     next(error);
   }
 };
+
+// get all doctors
+export const getAllDoctors = async (req, res, next) => {
+  try {
+    const doctors = await Doctor.find();
+    res.status(200).json({
+      success: true,
+      doctors,
+    });
+  } catch (error) {
+    next(error);
+  }
+};

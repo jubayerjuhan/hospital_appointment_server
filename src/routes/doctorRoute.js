@@ -3,6 +3,7 @@ import {
   createDoctor,
   deleteDoctor,
   editDoctor,
+  getAllDoctors,
   getDoctorById,
 } from "../controllers/doctorController.js";
 import { multerUpload } from "../multer/multerConfig.js";
@@ -15,5 +16,6 @@ router
 router.route("/get-doctor/:id").get(getDoctorById);
 router.route("/edit-doctor/:id").put(editDoctor);
 router.route("/delete-doctor/:id").delete(deleteDoctor);
+router.route("/list").get(getAllDoctors);
 
 export default router;
