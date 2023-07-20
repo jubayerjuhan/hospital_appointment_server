@@ -2,7 +2,6 @@ import express from "express";
 import path from "path";
 import "dotenv/config";
 import { connectDatabase } from "./db/databaseConnection.js";
-import Product from "./models/productModels.js";
 import bodyParser from "body-parser";
 import { errorCatcherMiddleware } from "./middlewares/errorCatcher.js";
 import userRoutes from "./routes/userRoutes.js";
