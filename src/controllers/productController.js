@@ -1,7 +1,7 @@
 import Product from "../models/productModels.js";
 
 // this function add products
-export const createProduct = async (req, res, next) => {
+export const createDoctor = async (req, res, next) => {
   try {
     const product = await Product.create({
       ...req.body,

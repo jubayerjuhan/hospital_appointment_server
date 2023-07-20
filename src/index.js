@@ -6,7 +6,7 @@ import Product from "./models/productModels.js";
 import bodyParser from "body-parser";
 import { errorCatcherMiddleware } from "./middlewares/errorCatcher.js";
 import userRoutes from "./routes/userRoutes.js";
-import productRoutes from "./routes/productRoutes.js";
+import doctorRoute from "./routes/doctorRoute.js";
 import appointmentRoutes from "./routes/appointmentRouter.js";
 import { fileURLToPath } from "url";
 
@@ -24,7 +24,7 @@ app.use("/images", express.static(path.join(__dirname, "uploads")));
 // bodyparser
 app.use(bodyParser.json());
 
-app.use("/product", productRoutes);
+app.use("/doctor", doctorRoute);
 app.use("/user", userRoutes);
 app.use("/appointment", appointmentRoutes);
 
