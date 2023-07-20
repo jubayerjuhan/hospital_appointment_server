@@ -55,3 +55,21 @@ export const editDoctor = async (req, res, next) => {
     next(error);
   }
 };
+
+// delete doctor
+export const deleteDoctor = async (req, res, next) => {
+  const doctorId = req.params.id;
+  try {
+    const deletedDoctor = await Doctor.findByIdAndDelete(doctorId);
+    if (!deletedDoctor) {
+      return next(new ErrorHandler(404, "Doctor not found"));
+    }
+    res.status(200).json({
+      success: true,
+      message: "Doctor Deleted",
+      doctor: deletedDoctor,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
