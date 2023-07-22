@@ -8,11 +8,13 @@ import userRoutes from "./routes/userRoutes.js";
 import doctorRoute from "./routes/doctorRoute.js";
 import appointmentRoutes from "./routes/appointmentRouter.js";
 import { fileURLToPath } from "url";
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+app.use(cors());
 
 // this function connects database with our backend
 connectDatabase();
